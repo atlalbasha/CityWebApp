@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <title>City</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- add -->
+
+      <!-- <label for="addCityName">Add City:</label>
+      <input id="addCityName" v-model="name" placeholder="Name" />
+
+      <label for="addPopulation">Population:</label>
+
+      <input
+        id="addPopulation"
+        v-model="population"
+        placeholder="Population"
+        type="number"
+      />
+
+      <input @click="addCity()" type="button" value="Add" /> -->
+
+      <!-- delete -->
+
+      <!--  <br /><br /> -->
+
+      <label for="cities">Choose a City to Delete or Update:</label>
+      <select v-model="id" id="cities">
+        <option value="">Choose a City</option>
+        <option v-for="city in cities" :value="city.id">{{ city.name }}</option>
+      </select>
+      <input @click="deleteCity(id)" type="button" value="Delete" />
+      <br /><br />
+      <label for="newCity">City Name:</label>
+      <input id="nweCity" v-model="name" placeholder="Name" />
+
+      <label for="newPopulation">Population:</label>
+      <input
+        id="newPopulation"
+        v-model="population"
+        placeholder="Population"
+        type="number"
+      />
+      <input @click="addCity()" type="button" value="Add" />
+      <input @click="updateCity(id)" type="button" value="Update" />
+
+      <!-- -->
+      <dl v-if="cities">
+        <template v-for="city in cities">
+          <!--  <dt>{{ city.id }}</dt> -->
+          <dt>{{ city.name }}</dt>
+          <dd>{{ city.population }}</dd>
+
+          <br />
+        </template>
+      </dl>
+      <p v-else>Laddar...</p>
+      <!--  -->
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
