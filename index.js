@@ -20,8 +20,9 @@ new Vue({
         method: "POST",
       })
         .then((response) => response.json())
-        .then((result) => {});
-      this.fetchCities();
+        .then((result) => {
+          this.fetchCities();
+        });
     },
     deleteCity(id) {
       if (id) {
@@ -29,8 +30,8 @@ new Vue({
           method: "DELETE",
         }).then((response) => {
           console.log(response);
+          this.fetchCities();
         });
-        this.fetchCities();
       } else {
         alert("Choose a City To Delete!");
       }
@@ -48,8 +49,9 @@ new Vue({
           method: "PUT",
         })
           .then((response) => response.json())
-          .then((result) => {});
-        this.fetchCities();
+          .then((result) => {
+            this.fetchCities();
+          });
       } else {
         alert("Choose a City to Update!");
       }
